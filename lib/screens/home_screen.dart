@@ -5,8 +5,9 @@ import 'package:flutter_bloc_lanjutan/bloc/counter_event.dart';
 
 class HomeScreen extends StatelessWidget {
   final CounterBloc counterBloc = CounterBloc();
-
   HomeScreen({super.key});
+
+  int value = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.blue,
                 child: InkWell(
                   onTap: () {
-                    counterBloc.add(CounterEvent.decrement);
+                    counterBloc.add(DecrementCounter(value));
                   },
                   child: const SizedBox(
                     height: 100,
@@ -57,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.blue,
                 child: InkWell(
                   onTap: () {
-                    counterBloc.add(CounterEvent.increment);
+                    counterBloc.add(IncrementCounter(value));
                   },
                   child: const SizedBox(
                     height: 100,
