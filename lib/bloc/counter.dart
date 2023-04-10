@@ -12,6 +12,28 @@ class CounterBloc extends Bloc<CounterEvent, int> {
       }
     });
   }
+
+  @override
+  void onChange(Change<int> change) {
+    // TODO: implement onChange
+    print(change);
+    super.onChange(change);
+  }
+
+  @override
+  void onError(Object error, StackTrace stackTrace) {
+    // TODO: implement onError
+    super.onError(error, stackTrace);
+  }
+
+  // Penggunaan transition ini untuk memantau perubahan pada state & event
+  // onTrasition hanya ada di penggunaan bloc
+  @override
+  void onTransition(Transition<CounterEvent, int> transition) {
+    // TODO: implement onTransition
+    print(transition);
+    super.onTransition(transition);
+  }
 }
 
 //   @override
